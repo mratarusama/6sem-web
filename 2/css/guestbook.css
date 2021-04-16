@@ -1,0 +1,76 @@
+#content {
+    display: flex;
+}
+
+form {
+    position: relative;
+    width: 40%;
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+.formEl {
+    margin-bottom: 20px;
+}
+
+.formEl > label {
+    display: inline-block;
+    position: relative;
+    width: 15%;
+    min-width: 60px;
+}
+
+.formEl > input, .formEl > textarea {
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    font-size: 1em;
+}
+
+#finalBtns {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.button {
+    display: flex;
+    flex: 1;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+    6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:first-child {
+    margin-right: 20px;
+}
+
+.button:hover {
+    opacity: 0.3;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+    6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    opacity: 1;
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+    inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#messages {
+    display: inline-block;
+    width: 55%;
+    max-height: 50vh;
+    height: 100%;
+    margin-left: 5%;
+    overflow-y: scroll;
+    scrollbar-color: rgb(113, 180, 255) rgb(113, 210, 255);
+    scrollbar-width: thin;
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}

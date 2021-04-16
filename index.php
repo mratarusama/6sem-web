@@ -7,14 +7,14 @@
         <h1>Лабораторные работы</h1>
         <div class="row">
         <?php
-            $dirs = array_diff(scandir('.'), array('index.php','.idea','..', '.'));
+            $dirs = array_diff(scandir('.'), array('.git', 'index.php','.idea','..', '.'));
             $i = 0;
             foreach($dirs as $dir){
-                echo '<div class="block"><a href="./'.$dir.'/Main"><span>'.$dir.'</span></a></div>';
-                $i += 1;
-                if($i%3==0 && $i > 0) {
+                if(($i-1)%3==0 && $i > 1) {
                     echo '</div><div class="row">';
                 }
+                echo '<div class="block"><a href="./'.$dir.'/Main"><span>'.$dir.'</span></a></div>';
+                $i += 1;
             }
         ?>
         </div>
