@@ -90,4 +90,31 @@
             <input class="button" type="reset" value="Reset">
         </div>
     </form>
+    <div id="result">
+        <h1>Результаты тестирования:</h1><br>
+        <div id="res_content">
+            <div class="res_blocks">
+                    <div>Номер</div>
+                    <div>Имя</div>
+                    <div>Группа</div>
+                    <div>Время</div>
+                    <div>Результат</div>
+            </div>
+            <?php
+            $tests = TestActiveRecord::findAll();
+            $nums = $names = $groups = $dates = $results = "";
+            foreach($tests as $result){
+                echo <<<KTOETOUZAET
+                    <div class="res_blocks">
+                        <div>$result->id</div>
+                        <div>$result->FIO</div>
+                        <div>$result->studGroup</div>
+                        <div>$result->date</div>
+                        <div>$result->result</div>
+                    </div>
+                KTOETOUZAET;
+            }
+            ?>
+        </table>
+    </div>
 </div>

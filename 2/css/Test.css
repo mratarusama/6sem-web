@@ -81,3 +81,56 @@ textarea {
 .ans2_radio {
   flex: auto;
 }
+
+#content {
+  display: flex;
+}
+
+form {
+  flex: 1;
+  max-width: 40%;
+  text-align: center;
+}
+
+#result {
+  max-width: 55%;
+  margin-left: 5%;
+  flex: 1;
+}
+
+#res_content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid #71d2e3;
+  border-radius: 20px;
+  border-spacing: 0;
+  flex-wrap: wrap;
+}
+
+.res_blocks {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.res_blocks:not(:last-child):not(:first-child){
+  border-bottom: 1px solid #71d2e3;
+}
+
+.res_blocks > div {
+  flex: 1;
+  padding: 5px;
+  height: 100%;
+}
+
+.res_blocks:first-child > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #71d2e3;
+}
+
+.res_blocks > div:first-child {
+  max-width: 40px;
+}

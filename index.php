@@ -7,7 +7,7 @@
         <h1>Лабораторные работы</h1>
         <div class="row">
         <?php
-            $dirs = array_diff(scandir('.'), array('.git', 'index.php','.idea','..', '.'));
+            $dirs = array_diff(scandir('.'), array('favicon.ico', '.git', 'index.php','.idea','..', '.'));
             $i = 0;
             foreach($dirs as $dir){
                 if(($i-1)%3==0 && $i > 1) {

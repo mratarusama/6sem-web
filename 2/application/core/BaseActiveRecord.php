@@ -10,14 +10,21 @@ class BaseActiveRecord {
         PDO::ATTR_DEFAULT_FETCH_MODE    => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES      => false
     ];
-    private $db = "";
+    private $db = "web-labs";
     private $dsn = "";
-    private $pdo;
+    public $pdo;
 
 
-    function __construct($dbName) {
-        $this->db = $dbName;
-        $this->dsn = "mysql:host=$this->host;dbname=$this->db;charset=$this->charset;port=$this->port";
+    function __construct($dbName = null) {
+        if(is_null($this->db)) {
+            if(is_null($dbName)) {
+                throw new Exception("Please specify database name");
+            } else {
+                $this->db = $dbName;
+            }
+        }
+
+        $this->dsn = "mysql:host=$this->host;port=$this->port;dbname=$this->db";
         try {
             $this->pdo = new PDO($this->dsn, $this->user, $this->pass, $this->options);
         } catch (PDOException $e) {
@@ -36,12 +43,22 @@ class BaseActiveRecord {
     }
 
     // Ищет в таблице элемент с полем id равным $id
-    function find($id){
+    static function find($id){
 
     }
 
     // Возвращает все строки таблицы
-    function findAll(){
+    static function findAll(){
 
+    }
+
+    // Выполнение запроса
+    protected function query($query){
+        try {
+            $result = $this->pdo->query($query);
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage(), (int)$e->getCode());
+        }
+        return $result;
     }
 }

@@ -7,6 +7,7 @@ require_once 'application/core/view.php';
 require_once 'application/core/controller.php';
 require_once 'application/core/BaseActiveRecord.php';
 require_once 'application/models/CustomFormValidation.php';
+require_once 'application/models/TestActiveRecord.php';
 
 
 /*
